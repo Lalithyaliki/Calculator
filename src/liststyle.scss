@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #212121;
+}
+
+.calci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+    .data {
+        max-width: 300px;
+        min-height: 100px;
+        padding: 20px;
+        border-radius: 20px;
+        border: 5px solid transparent;
+        border-radius: 15px;
+        transition: all .3s ease-in-out;
+        background:
+            linear-gradient(#000, #000) padding-box,
+            linear-gradient(270deg, red, yellow, lime, cyan, blue, magenta, red) border-box;
+        background-size: 400% 400%;
+        animation: borderAnimation 8s linear infinite;
+        transition: all 0.1s ease;
+
+        @keyframes borderAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+
+        }
+
+        &:hover {
+            .button {
+                opacity: 1;
+                max-height: 300px;
+
+            }
+        }
+
+        h2 {
+            text-align: center;
+            padding-bottom: 10px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #f7b731);
+            background-clip: text;
+            color: transparent;
+            font-family: sans-serif;
+            text-transform: capitalize;
+
+        }
+
+      
+
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: end;
+            color: white;
+            font-size: 25px;
+            padding-bottom: 15px;
+            background-color: transparent;
+        }
+
+        .button {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 10px;
+            background-color: transparent;
+            opacity: 0;
+            max-height: 0;
+            transition: all 1s ease-in-out;
+
+
+            button {
+                height: 30px;
+                color: white;
+                flex-basis: 22%;
+                border: none;
+                outline: none;
+                border-radius: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                font-weight: 700;
+                box-shadow: 0px 0px 7px black;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    background-color: #bbb;
+                    color: black
+                }
+
+            }
+        }
+    }
+}
