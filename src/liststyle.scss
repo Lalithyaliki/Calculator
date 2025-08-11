@@ -26,6 +26,7 @@
         background-size: 400% 400%;
         animation: borderAnimation 8s linear infinite;
         transition: all 0.1s ease;
+        overflow: hidden;
 
         @keyframes borderAnimation {
             0% {
@@ -62,7 +63,7 @@
 
         }
 
-      
+
 
 
         input {
@@ -83,6 +84,7 @@
             background-color: transparent;
             opacity: 0;
             max-height: 0;
+            overflow: hidden;
             transition: all 1s ease-in-out;
 
 
