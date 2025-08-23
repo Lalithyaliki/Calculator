@@ -29,7 +29,7 @@ function List() {
             }
             return;
         }
-        setinput((prev) => (prev === "0" ? btn.toString() : prev + btn ));
+        setinput((prev) => (prev === "0" ? btn.toString() : prev + btn));
 
     }
 
