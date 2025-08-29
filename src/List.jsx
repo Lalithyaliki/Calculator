@@ -6,8 +6,6 @@ import React, { useState } from 'react'
 function List() {
 
     const [theme, setTheme] = useState("dark");
-
-
     const [input, setinput] = useState("0");
 
 
@@ -42,7 +40,7 @@ function List() {
             <div className='nav'>
                 <a className="global-text" href="#">
                     <i className="bi bi-calculator"></i>
-                    calculator
+                    Calculator
                 </a>
                 <button className="theme" onClick={() => setTheme((prev) => (prev === "dark"?"light":"dark"))}>
                     {theme === "dark" ? <i className="bi bi-moon"></i> :<i className="bi bi-sun"></i> }
