@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './styles/style.css';
 
 function App() {
@@ -16,7 +16,6 @@ function App() {
   const [popup, setpopup] = useState(false);
   const [showpassword, setpassword] = useState(false);
 
-
   const onchange = (e) => {
 
     const { name, value } = e.target;
@@ -28,7 +27,6 @@ function App() {
     }
 
   }
-
 
   const onlink = (e) => {
     e.preventDefault();
@@ -51,6 +49,12 @@ function App() {
       setpopup(false)
     }, 3000);
 
+    const z = {
+      name: formname.name,
+      email: formname.email,
+      password: formname.password
+    }
+    console.log(z);
 
     setname({
       name: '',
@@ -60,14 +64,13 @@ function App() {
 
   }
 
-
   return (
 
     <div className='outside'>
       <p id='pop'
         className={popup ? "right" : ""}
       >you lodded successfully</p>
-      <form onSubmit={onlink}>
+      <form onSubmit={onlink} autoComplete='off' >
         <label htmlFor='name'>Name *</label>
         <input type='text'
           name='name'
@@ -76,7 +79,6 @@ function App() {
           className={error.name ? "error" : ""}
           placeholder='Name'
           id='name'
-          autoComplete='off'
         ></input>
         <label htmlFor='email'>Email *</label>
         <input type='email'
@@ -86,7 +88,6 @@ function App() {
           className={error.email ? "error" : ""}
           placeholder='Email'
           id='email'
-          autoComplete='off'
         ></input>
         <label htmlFor='password'>Password *</label>
         <input type={showpassword ? "text" : "password"}
@@ -96,7 +97,6 @@ function App() {
           className={error.password ? "error" : ""}
           placeholder='Password'
           id='password'
-          autoComplete='off'
         ></input>
         <button type='button'
           aria-label='Show password'
@@ -107,12 +107,7 @@ function App() {
       </form>
 
     </div >
-
-
   )
-
-
-
 }
 
 export default App;

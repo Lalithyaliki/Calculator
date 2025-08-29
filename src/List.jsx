@@ -5,7 +5,11 @@ import React, { useState } from 'react'
 
 function List() {
 
+    const [theme, setTheme] = useState("dark");
+
+
     const [input, setinput] = useState("0");
+
 
     const buttons = ["Ac", "del", "%", "/", 7, 8, 9, "+", 4, 5, 6, "-", 1, 2, 3, "*", "#", 0, ".", "="]
 
@@ -34,17 +38,28 @@ function List() {
     }
 
     return (
-        <div className="calci">
-            <div className="data">
-                <h2>Calculator</h2>
-                <input type="text" placeholder="0" value={input} id="text"></input>
-                <div className="button">
-                    {buttons.map((btn, index) => (
-                        <button key={index} onClick={() => handle(btn)}>{btn}</button>
-                    ))}
-                </div>
+        <div className={`project ${theme}`}>
+            <div className='nav'>
+                <a className="global-text" href="#">
+                    <i className="bi bi-calculator"></i>
+                    calculator
+                </a>
+                <button className="theme" onClick={() => setTheme((prev) => (prev === "dark"?"light":"dark"))}>
+                    {theme === "dark" ? <i className="bi bi-moon"></i> :<i className="bi bi-sun"></i> }
+                </button>
             </div>
-        </div >
+            <div className="calci">
+                <div className="data">
+                    <h2 className='global-text'>Calculator</h2>
+                    <input type="text" placeholder="0" value={input} id="text"></input>
+                    <div className="button">
+                        {buttons.map((btn, index) => (
+                            <button key={index} onClick={() => handle(btn)}>{btn}</button>
+                        ))}
+                    </div>
+                </div>
+            </div >
+        </div>
 
     )
 }

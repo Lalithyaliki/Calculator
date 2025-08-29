@@ -2,108 +2,177 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #212121;
 }
 
-.calci {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+.project {
+
+    background-color: var(--bg-color);
+    --box-shadow: grey;
 
 
-    .data {
-        max-width: 300px;
-        min-height: 100px;
-        padding: 20px;
-        border-radius: 20px;
-        border: 5px solid transparent;
-        border-radius: 15px;
-        transition: all .3s ease-in-out;
-        background:
-            linear-gradient(#000, #000) padding-box,
-            linear-gradient(270deg, red, yellow, lime, cyan, blue, magenta, red) border-box;
-        background-size: 400% 400%;
-        animation: borderAnimation 8s linear infinite;
-        transition: all 0.1s ease;
-        overflow: hidden;
 
-        @keyframes borderAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
+    &.dark {
+        --bg-color: #212121;
+        --nav-bg: #000;
+        --input-text: #fff;
+        --btn-hover: #bbb;
+        --btn-bg: #212121;
+        --btn-text: #000;
 
-            50% {
-                background-position: 100% 50%;
-            }
+    }
 
-            100% {
-                background-position: 0% 50%;
-            }
+    &.light {
+        --bg-color: #fff;
+        --nav-bg: white;
+        --input-text: #000;
+        --btn-bg: #e0f2ff;
+        --btn-text: #0a2540;
+        --btn-hover: #b3e0ff;
+
+    }
 
 
-        }
 
-        &:hover {
-            .button {
-                opacity: 1;
-                max-height: 300px;
+    .global-text {
+        background: linear-gradient(45deg, #4facfe, #00f2fe, #f7b731);
+        background-clip: text;
+        color: transparent;
+    }
 
-            }
-        }
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 0px 7px var(--box-shadow);
+        z-index: 999;
 
-        h2 {
-            text-align: center;
-            padding-bottom: 10px;
-            background: linear-gradient(45deg, #4facfe, #00f2fe, #f7b731);
-            background-clip: text;
-            color: transparent;
-            font-family: sans-serif;
-            text-transform: capitalize;
 
-        }
 
-        input {
-            width: 100%;
-            border: none;
-            outline: none;
-            text-align: end;
-            color: white;
-            font-size: 25px;
-            padding-bottom: 15px;
-            background-color: transparent;
-        }
-
-        .button {
+        a {
+            text-decoration: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px 10px;
-            background-color: transparent;
-            opacity: 0;
-            max-height: 0;
+            align-items: center;
+            gap: 5px;
+            font-size: 25px;
+            font-weight: 700;
+
+        }
+
+        .theme {
+            padding: 7px;
+            font-size: 15px;
+            background-color: var(--nav-bg);
+            color: var(--input-text);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px var(--box-shadow);
+        }
+
+    }
+
+    .calci {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+
+        .data {
+            max-width: 300px;
+            min-height: 100px;
+            padding: 20px;
+            border-radius: 20px;
+            border: 5px solid transparent;
+            border-radius: 15px;
+            transition: all .3s ease-in-out;
+            background:
+                linear-gradient(var(--nav-bg), var(--nav-bg)) padding-box,
+                linear-gradient(270deg, red, yellow, lime, cyan, blue, magenta, red) border-box;
+            background-size: 400% 400%;
+            animation: borderAnimation 8s linear infinite;
+            transition: all 0.1s ease;
             overflow: hidden;
-            transition: all 1s ease-in-out;
 
-
-            button {
-                height: 30px;
-                color: white;
-                flex-basis: 22%;
-                border: none;
-                outline: none;
-                border-radius: 20px;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 15px;
-                font-weight: 700;
-                box-shadow: 0px 0px 7px black;
-                cursor: pointer;
-                transition: all .2s ease-in-out;
-
-                &:hover {
-                    background-color: #bbb;
-                    color: black
+            @keyframes borderAnimation {
+                0% {
+                    background-position: 0% 50%;
                 }
 
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+
+
+            }
+
+            &:hover {
+                .button {
+                    opacity: 1;
+                    max-height: 300px;
+
+                }
+            }
+
+            h2 {
+                text-align: center;
+                padding-bottom: 10px;
+                font-family: sans-serif;
+                text-transform: capitalize;
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                text-align: end;
+                color: var(--input-text);
+                font-size: 25px;
+                padding-bottom: 15px;
+                background-color: transparent;
+            }
+
+            .button {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px 10px;
+                background-color: var(--nav-bg);
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 1s ease-in-out;
+
+
+                button {
+                    height: 30px;
+                    color: var(--input-text);
+                    flex-basis: 22%;
+                    border: none;
+                    outline: none;
+                    border-radius: 20px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 15px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    background-color: var(--btn-bg);
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        background-color: var(--btn-hover);
+                        color: var(--btn-text);
+                    }
+
+                }
             }
         }
     }
