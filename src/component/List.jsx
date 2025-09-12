@@ -1,5 +1,4 @@
-import './liststyle.css';
-
+import '../styles/liststyle.css';
 import React, { useState } from 'react'
 
 
@@ -7,7 +6,6 @@ function List() {
 
     const [theme, setTheme] = useState("dark");
     const [input, setinput] = useState("0");
-
 
     const buttons = ["Ac", "del", "%", "/", 7, 8, 9, "+", 4, 5, 6, "-", 1, 2, 3, "*", "#", 0, ".", "="]
 
@@ -32,7 +30,6 @@ function List() {
             return;
         }
         setinput((prev) => (prev === "0" ? btn.toString() : prev + btn));
-
     }
 
     return (
